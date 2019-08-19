@@ -1,0 +1,7 @@
+# *** Warning! Your custom domain is not using HTTPS yet ***
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Redirect default Netlify subdomain to primary domain
+http://condescending-almeida-63f528.netlify.com/*  https://shimo5.me/:splat  301!
+https://condescending-almeida-63f528.netlify.com/*  https://shimo5.me/:splat  301!
+http://shimo5.me/*  https://shimo5.me/:splat  301!
