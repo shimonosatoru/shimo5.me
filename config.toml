@@ -1,6 +1,6 @@
 baseurl = "https://shimo5.me/"
 languageCode = "en-us"
-title = "エンジニアの深い沼"
+title = "エンジニアの深い沼の中"
 theme = "blackburn"
 author = "Satoru Shimono"
 copyright = "&copy; 2019. All rights reserved."
@@ -14,7 +14,7 @@ paginate = 10
 [params]
   # Shown in the home page
   subtitle = "深いことが好きなエンジニアが呟きます。"
-  brand = "Blackburn"
+  brand = "Shimo"
   googleAnalytics = "G-YS5CE7H4Z3"
   disqus = "disqus_BEdgnPBI66"
   # CSS name for highlight.js
@@ -52,7 +52,4 @@ paginate = 10
   # by entering your username or ID.
   twitter = "eng_shmm"
   facebook = "shimonosatoru"
-  instagram = "*"
   github = "shimonosatoru"
-  stackoverflow = "*"
-  linkedin = "*"
