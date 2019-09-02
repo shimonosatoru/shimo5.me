@@ -1,6 +1,6 @@
 baseurl = "https://shimo5.me/"
 languageCode = "en-us"
-title = "エンジニアの深い沼の中"
+title = "エンジニアの中の人"
 theme = "blackburn"
 author = "Satoru Shimono"
 copyright = "&copy; 2019. All rights reserved."
@@ -13,7 +13,7 @@ paginate = 10
 
 [params]
   # Shown in the home page
-  subtitle = "深いことが好きなエンジニアが呟きます。"
+  subtitle = "どうも、エンジニアの中の人です。"
   brand = "Shimo"
   googleAnalytics = "G-YS5CE7H4Z3"
   disqus = "disqus_BEdgnPBI66"
