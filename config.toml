@@ -15,7 +15,7 @@ paginate = 10
   # Shown in the home page
   subtitle = "どうも、エンジニアの中の人です。"
   brand = "Shimo"
-  googleAnalytics = "G-YS5CE7H4Z3"
+  googleAnalytics = "UA-145833063-1"
   disqus = "disqus_BEdgnPBI66"
   # CSS name for highlight.js
   highlightjs = "androidstudio"
