@@ -15,12 +15,15 @@
 <meta name="theme-color" content="#ffffff">
 
 
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+
+
 
 <meta property="og:title" content="designdoc" />
-<meta property="og:description" content="My HomePage Description" />
+<meta property="og:description" content="都内でエンジニアやってます。カフェ巡りとプログラミングが趣味です。たまにホテル巡りも、聖人発達理論やメタ認知なんかもかじってます。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://shimo5.me/tags/designdoc/" />
-<meta property="og:updated_time" content="2019-12-13T00:00:00+00:00" /><meta property="og:site_name" content="My Blog" />
+<meta property="og:updated_time" content="2019-12-13T00:00:00+00:00" /><meta property="og:site_name" content="Shimo&#39;s Blog" />
 
 
 
@@ -28,7 +31,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="designdoc"/>
-<meta name="twitter:description" content="My HomePage Description"/>
+<meta name="twitter:description" content="都内でエンジニアやってます。カフェ巡りとプログラミングが趣味です。たまにホテル巡りも、聖人発達理論やメタ認知なんかもかじってます。"/>
 
 
 
@@ -61,13 +64,16 @@ if (!doNotTrack) {
 
 
 
+<link rel="icon" href="/images/favicon.ico">
 
 
-<link rel="stylesheet" href="https://shimo5.me/scss/journal.min.47aa1ffb60880ad8c72feecd6962a14331eca7a7a30e08354a1ca91009b8bc5b.css" integrity="sha256-R6of&#43;2CICtjHL&#43;7NaWKhQzHsp6ejDgg1ShypEAm4vFs=" media="screen">
+
+
+<link rel="stylesheet" href="https://shimo5.me/scss/journal.min.470dfe9357c8889815b27bd2b46b736aaeb3faef29caebd516c65ed096888a50.css" integrity="sha256-Rw3&#43;k1fIiJgVsnvStGtzaq6z&#43;u8pyuvVFsZe0JaIilA=" media="screen">
 
 
 
-<link rel="stylesheet" href="https://shimo5.me/scss/dark-mode.min.832f90e2bc07191c85a3b6c0310607f539897546b1126dd04df64aff22316ecd.css" integrity="sha256-gy&#43;Q4rwHGRyFo7bAMQYH9TmJdUaxEm3QTfZK/yIxbs0=" media="screen">
+<link rel="stylesheet" href="https://shimo5.me/scss/dark-mode.min.919a1ab0adf096d137e83d6ede4c737b072e1c874bfc92a36ee91b41088292cc.css" integrity="sha256-kZoasK3wltE36D1u3kxzewcuHIdL/JKjbukbQQiCksw=" media="screen">
 
 
 <script src="https://shimo5.me//js/loadCSS.js"></script>
@@ -93,11 +99,11 @@ if (!doNotTrack) {
     <a class="a-block nav-head false" href="https://shimo5.me/">
     
         <div class="nav-title">
-            エンジニアの中の人
+            shimo
         </div>
         
         <div class="nav-subtitle">
-            カフェ巡りとプログラミング、たまにホテル巡り
+            エンジニアの中の人
         </div>
         
     </a>
@@ -144,6 +150,46 @@ if (!doNotTrack) {
             
             <a class="a-block nav-link-item false" href="/index.xml">
                 RSS Feed
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="https://twitter.com/shimo5_me">
+                Twitter
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="https://facebook.com/shimonosatoru">
+                Facebook
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="https://github.com/shimonosatoru">
+                GitHub
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="https://www.linkedin.com/in/shimonosatoru/">
+                LinkedIn
             </a>
             
         
@@ -237,6 +283,46 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
                 </a>
                 
             
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="https://twitter.com/shimo5_me">
+                    Twitter
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="https://facebook.com/shimonosatoru">
+                    Facebook
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="https://github.com/shimonosatoru">
+                    GitHub
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="https://www.linkedin.com/in/shimonosatoru/">
+                    LinkedIn
+                </a>
+                
+            
             
         </div>
     </div>
@@ -253,7 +339,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             </i>
         </button>
         <a ref="navTitle" class="navbar-brand" href="https://shimo5.me/">
-            エンジニアの中の人
+            shimo
         </a>
         
         <button type="button" class="nav-darkmode-toggle" v-on:click="toggleDarkMode">
@@ -270,9 +356,9 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
 <div class="single-column-header-container" ref="pageHead"
      v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
     <a href="https://shimo5.me/">
-        <div class="single-column-header-title">エンジニアの中の人</div>
+        <div class="single-column-header-title">shimo</div>
         
-        <div class="single-column-header-subtitle">カフェ巡りとプログラミング、たまにホテル巡り</div>
+        <div class="single-column-header-subtitle">エンジニアの中の人</div>
         
 
     </a>
@@ -284,7 +370,7 @@ Ported from <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopene
             <div class="post-item post-item-no-gaps">
                 <div class="post-item-info-wrapper">
                     <div class="post-item-title  post-item-title-small">
-                        <a href="https://shimo5.me/">エンジニアの中の人</a> / designdoc
+                        <a href="https://shimo5.me/">shimo</a> / designdoc
                     </div>
                 </div>
             </div>

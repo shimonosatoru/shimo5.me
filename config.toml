@@ -1,7 +1,7 @@
 baseURL = "https://shimo5.me/"
 DefaultContentLanguage = "en" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "en-us"
-title = "エンジニアの中の人"
+title = "shimo"
 copyright = "&copy; 2019. All rights reserved."
 theme = "diary"
 googleAnalytics = "UA-145833063-1"
@@ -19,24 +19,29 @@ googleAnalytics = "UA-145833063-1"
     tabWidth = 4
 
 [params]
-subtitle = "カフェ巡りとプログラミング、たまにホテル巡り"
+subtitle = "エンジニアの中の人"
 enableGitalk = true
+favicon = "/images/favicon.ico"
 
 # Twitter Card and Open Graph settings
 enableOpenGraph = true
 enableTwitterCards = true
-title = "My Blog" # will set 'og:site_name'
-description = "My HomePage Description"  # will set 'og:description'
+title = "Shimo's Blog"
+description = "都内でエンジニアやってます。カフェ巡りとプログラミングが趣味です。たまにホテル巡りも、聖人発達理論やメタ認知なんかもかじってます。"
 
 [params.gitalk]
-  owner = "user"
-  repo = "repo name"
-  client_id = "your client id"
-  client_secret = "your client secret"
+  owner = "shimonosatoru"
+  repo = "gitalk-comments-store"
+  client_id = "1bfaa38e77291c664283"
+  client_secret = "83b14049070475e338810e9592bcc9dab426c090"
 [taxonomies]
    tag = "tags"
    category = "categories"
 
+[[menu.main]]
+url = "/post"
+name = "Archive"
+weight = 1
 [[menu.main]]
 url = "/categories"
 name = "Categories"
@@ -46,10 +51,22 @@ url = "/tags"
 name = "Tags"
 weight = 3
 [[menu.main]]
-url = "/posts"
-name = "Archive"
-weight = 1
-[[menu.main]]
 url = "/index.xml"
 name = "RSS Feed"
 weight = 4
+[[menu.main]]
+url = "https://twitter.com/shimo5_me"
+name = "Twitter"
+weight = 5
+[[menu.main]]
+url = "https://facebook.com/shimonosatoru"
+name = "Facebook"
+weight = 6
+[[menu.main]]
+url = "https://github.com/shimonosatoru"
+name = "GitHub"
+weight = 7
+[[menu.main]]
+url = "https://www.linkedin.com/in/shimonosatoru/"
+name = "LinkedIn"
+weight = 8

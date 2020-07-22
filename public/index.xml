@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>エンジニアの中の人</title>
+    <title>shimo</title>
     <link>https://shimo5.me/</link>
-    <description>Recent content on エンジニアの中の人</description>
+    <description>Recent content on shimo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
@@ -18,7 +18,7 @@
         <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
         
         <guid>https://shimo5.me/post/2019-12-13/</guid>
-        <description>エンジニアの中の人 https://shimo5.me/post/2019-12-13/ -&lt;p&gt;全然意識はしてないのですが、&lt;/p&gt;
+        <description>shimo https://shimo5.me/post/2019-12-13/ -&lt;p&gt;全然意識はしてないのですが、&lt;/p&gt;
 &lt;p&gt;投稿する日付が見事に一か月ごとになっていてなんだかうれしい気持ちになりました。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;そんなことはよくて今日は「Design Doc」について話そうかと思います。&lt;/p&gt;
@@ -121,7 +121,7 @@
         <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
         
         <guid>https://shimo5.me/post/2019-10-11/</guid>
-        <description>エンジニアの中の人 https://shimo5.me/post/2019-10-11/ -&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+        <description>shimo https://shimo5.me/post/2019-10-11/ -&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
 &lt;p&gt;SQL構文にある&lt;code&gt;DELETE&lt;/code&gt;直後はデータをゴーストレコードとして設定し、データベース上には存在しているものの無効なレコードになっている。&lt;/p&gt;
 &lt;h2 id=&#34;そもそもなんでこんなこと調べたの&#34;&gt;そもそもなんでこんなこと調べたの？&lt;/h2&gt;
 &lt;p&gt;初心者向けのJavaScriptの学習教材を作成していました。
@@ -227,7 +227,7 @@ JSでdeleteメソッドを実行するとemptyになるらしいです（知ら�
         <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
         
         <guid>https://shimo5.me/post/2019-09-02/</guid>
-        <description>エンジニアの中の人 https://shimo5.me/post/2019-09-02/ -&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+        <description>shimo https://shimo5.me/post/2019-09-02/ -&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
 &lt;p&gt;resourcesは、複数のリソースに対するCRUD処理を行うためのルーティングを生成する。
 resourceは、ただ１つのリソースに対するCRUD処理を行うためのルーティングを生成する。&lt;/p&gt;
 &lt;h2 id=&#34;どんなルーティングになるのか&#34;&gt;どんなルーティングになるのか？&lt;/h2&gt;
@@ -273,7 +273,7 @@ edit_users GET    /users/edit(.:format)                   users#edit
         <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
         
         <guid>https://shimo5.me/post/2019-08-26/</guid>
-        <description>エンジニアの中の人 https://shimo5.me/post/2019-08-26/ -&lt;h2 id=&#34;はじめまして&#34;&gt;はじめまして&lt;/h2&gt;
+        <description>shimo https://shimo5.me/post/2019-08-26/ -&lt;h2 id=&#34;はじめまして&#34;&gt;はじめまして&lt;/h2&gt;
 &lt;p&gt;普段はWebエンジニア（主にバックエンド）として働いています。いままではQiitaやTwitterなどで主にアウトプットしていたのですが、Qiitaのゴミ記事問題に耳を痛め、オリジナルブログに逃げてきました。&lt;/p&gt;
 &lt;p&gt;これから&lt;a href=&#34;https://shimo5.me/about/&#34;&gt;プロフィールページ&lt;/a&gt;も充実させていこうかなと思っています。直近で多くイベントがあったので一つ一つ投稿しながら、技術的なアウトプットも忘れずに書き記していこうかなと思います。&lt;/p&gt;
 &lt;h2 id=&#34;よろしくお願いします&#34;&gt;よろしくお願いします！&lt;/h2&gt;
