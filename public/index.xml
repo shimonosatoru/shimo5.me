@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>エンジニアの中の人</title>
@@ -9,104 +8,280 @@
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
     <lastBuildDate>Fri, 13 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://shimo5.me/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://shimo5.me/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>［Design System］「Design Doc」って何なのか？</title>
-      <link>https://shimo5.me/post/what_is_design_doc/</link>
-      <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/post/what_is_design_doc/</guid>
-      <description>全然意識はしてないのですが、
-投稿する日付が見事に一か月ごとになっていてなんだかうれしい気持ちになりました。
- そんなことはよくて今日は「Design Doc」について話そうかと思います。
-いつもは結論から書くスタイルなのですが、Design Docっぽくシナリオ形式で書いていくことにします。
-Design Docとの出会い 「いちいち英語で書いててうざい」と思った方、すいません。「デザインドック」と書くのが違和感しかなくて「Design Doc」で統一しています。うざくならなないように擬人化します。
-僕が彼と出会ったのはメンロパークでした。 サンフランシスコとサンノゼの間くらいにあるちょっと田舎感あるいい街です。
-メンロパークにはFacebookの本社があります。 そこに僕が訪ねた際にFacebookの社員の方に紹介してもらいました。
-GoogleやFacebookでも彼は起用されているらしく、とても優秀
-何かと問題が多い設計書 現場に入ってよくある話としては
- 設計書とソースコードが乖離している 設計書が読みにくい そもそも設計書なんてものはない  が多い印象です。
-設計書とソースコードが乖離している 一番多いケースなんじゃないかなと思います。
-最初はやる気マックスで設計書頑張って作るんだけれども、だんだんその勢いも失速してきてある時の緊急対応からソースコードだけ更新されていくという。。。
-設計書が読みにくい 書式が統一されてなかったり、そもそも拡張子が違うなんてことも？
-追加要件もどこから飛んでくるかわからず、Slackなのかメールなのかはたまた口頭なのか。
-そもそも設計書なんてものはない これも多いパターンです。 やる気も出ず、設計書がないという。
-一時期は「ソースコードが設計書」だから設計書なくていいんじゃね？と思っていた僕ですが、
-今では頭を冷やしてやっぱり設計書は必要という結論に至っています。
-なにかと開発者以外の方も見ますからね。
- つまり、設計書を作り運用するのは難しいわけです。
-そこで彼が登場するわけですね。
-Design Docとは何者か？ 設計書はエクセルとかスプレッドシートで書くところが多いかと思いますが、Design DocはDocなだけにドキュメントで書くそうです。
-僕が彼と出会った場所、シリコンバレーで広く使われているそうで日本にはあまりなじまず普及が苦戦している模様。
-基本的なポリシーとしては「コードにかけないことを書く」ということでコード読んだらわかるでしょみたいなことはドキュメントには書かず、What、How、Whyのような観点で書いていきます。
-要は細かいことは書くなってことですね。
-GoogleさんがDesign Docを公開してくれているそうなので貼っておきます。（有難し）
-WebKit WebSocketDesign Doc（グーグル）
-The Chromium Projects - Extensions
-Dagger 2.0 
-Design Docどうやって書くの？ 参考は貼りましたが、とはいってもどう書くの？という疑問は消えないわけでこちらにつづっていきます。
-1. 要件を整理する やっぱり要件を把握していないとかけないのでお客さんとミーティングするなり、自身で考えるなりで要件を一つ一つ洗い出していきます。
-2. Design Docにタイトルをつける 先ほどのGoogleさんのドキュメントにもあったようにタイトルを付けます。シンプルなものがよいかと思います。じゃないとタイトルだけで見てもらえなかったりするので。
-あと自分も書いた後忘れるんでね。これ何のファイルだっけ？ってなったらソースコードとドキュメントの間に溝が生まれ始めます。</description>
-    </item>
     
-    <item>
-      <title>［SQL］JavaScriptのオブジェクトを触ってわかったSQLの削除の仕組み</title>
-      <link>https://shimo5.me/post/about_ghost_record/</link>
-      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/post/about_ghost_record/</guid>
-      <description>結論 SQL構文にあるDELETE直後はデータをゴーストレコードとして設定し、データベース上には存在しているものの無効なレコードになっている。
-そもそもなんでこんなこと調べたの？ 初心者向けのJavaScriptの学習教材を作成していました。 DBの代わりにJSオブジェクトを用いて、データのCRUD機能を実装していくというものです。 オブジェクトは下記のように定義しました。
-var users = [ { id: 1, name: &#39;yamada&#39;, age: 21, job: &#39;student&#39; }, { id: 2, name: &#39;suzuki&#39;, age: 24, job: &#39;employee&#39; } ] CRUDなので当然DELETEも作成したのですが、その時事件は起きました。
-VM501:1 Uncaught TypeError: Cannot read property &#39;id&#39; of undefined え&amp;hellip;？
-該当コードはこちらでした。
-function deleteUser(id) { // バリデーションは省略〜 // 対象ユーザーを検索 for (let i = 0; i &amp;lt; users.length; i++) { if (users[i].id === id) { // 削除 return delete users[i]; } } return &#39;対象のユーザーは見つかりませんでした。&#39;; } 対象ユーザーが見つかるまでループして探し、見つかったら削除するものでした。 最初の一回は実行したらうまくいったのですが、２回目からなぜかうまくいかなくなってしまいました。</description>
-    </item>
+        <item>
+        <title>「Design Doc」って何なのか？</title>
+        <link>https://shimo5.me/post/2019-12-13/</link>
+        <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://shimo5.me/post/2019-12-13/</guid>
+        <description>エンジニアの中の人 https://shimo5.me/post/2019-12-13/ -&lt;p&gt;全然意識はしてないのですが、&lt;/p&gt;
+&lt;p&gt;投稿する日付が見事に一か月ごとになっていてなんだかうれしい気持ちになりました。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;そんなことはよくて今日は「Design Doc」について話そうかと思います。&lt;/p&gt;
+&lt;p&gt;いつもは結論から書くスタイルなのですが、Design Docっぽくシナリオ形式で書いていくことにします。&lt;/p&gt;
+&lt;h2 id=&#34;design-docとの出会い&#34;&gt;Design Docとの出会い&lt;/h2&gt;
+&lt;p&gt;「いちいち英語で書いててうざい」と思った方、すいません。「デザインドック」と書くのが違和感しかなくて「Design Doc」で統一しています。うざくならなないように擬人化します。&lt;/p&gt;
+&lt;p&gt;僕が彼と出会ったのはメンロパークでした。
+サンフランシスコとサンノゼの間くらいにあるちょっと田舎感あるいい街です。&lt;/p&gt;
+&lt;p&gt;メンロパークにはFacebookの本社があります。
+そこに僕が訪ねた際にFacebookの社員の方に紹介してもらいました。&lt;/p&gt;
+&lt;p&gt;GoogleやFacebookでも彼は起用されているらしく、とても優秀&lt;/p&gt;
+&lt;h2 id=&#34;何かと問題が多い設計書&#34;&gt;何かと問題が多い設計書&lt;/h2&gt;
+&lt;p&gt;現場に入ってよくある話としては&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;設計書とソースコードが乖離している&lt;/li&gt;
+&lt;li&gt;設計書が読みにくい&lt;/li&gt;
+&lt;li&gt;そもそも設計書なんてものはない&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;が多い印象です。&lt;/p&gt;
+&lt;h3 id=&#34;設計書とソースコードが乖離している&#34;&gt;設計書とソースコードが乖離している&lt;/h3&gt;
+&lt;p&gt;一番多いケースなんじゃないかなと思います。&lt;/p&gt;
+&lt;p&gt;最初はやる気マックスで設計書頑張って作るんだけれども、だんだんその勢いも失速してきてある時の緊急対応からソースコードだけ更新されていくという。。。&lt;/p&gt;
+&lt;h3 id=&#34;設計書が読みにくい&#34;&gt;設計書が読みにくい&lt;/h3&gt;
+&lt;p&gt;書式が統一されてなかったり、そもそも拡張子が違うなんてことも？&lt;/p&gt;
+&lt;p&gt;追加要件もどこから飛んでくるかわからず、Slackなのかメールなのかはたまた口頭なのか。&lt;/p&gt;
+&lt;h3 id=&#34;そもそも設計書なんてものはない&#34;&gt;そもそも設計書なんてものはない&lt;/h3&gt;
+&lt;p&gt;これも多いパターンです。
+やる気も出ず、設計書がないという。&lt;/p&gt;
+&lt;p&gt;一時期は「ソースコードが設計書」だから設計書なくていいんじゃね？と思っていた僕ですが、&lt;/p&gt;
+&lt;p&gt;今では頭を冷やしてやっぱり設計書は必要という結論に至っています。&lt;/p&gt;
+&lt;p&gt;なにかと開発者以外の方も見ますからね。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;つまり、設計書を作り運用するのは難しいわけです。&lt;/p&gt;
+&lt;p&gt;そこで彼が登場するわけですね。&lt;/p&gt;
+&lt;h2 id=&#34;design-docとは何者か&#34;&gt;Design Docとは何者か？&lt;/h2&gt;
+&lt;p&gt;設計書はエクセルとかスプレッドシートで書くところが多いかと思いますが、Design DocはDocなだけにドキュメントで書くそうです。&lt;/p&gt;
+&lt;p&gt;僕が彼と出会った場所、シリコンバレーで広く使われているそうで日本にはあまりなじまず普及が苦戦している模様。&lt;/p&gt;
+&lt;p&gt;基本的なポリシーとしては「コードにかけないことを書く」ということでコード読んだらわかるでしょみたいなことはドキュメントには書かず、What、How、Whyのような観点で書いていきます。&lt;/p&gt;
+&lt;p&gt;要は細かいことは書くなってことですね。&lt;/p&gt;
+&lt;p&gt;GoogleさんがDesign Docを公開してくれているそうなので貼っておきます。（有難し）&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.google.com/document/d/1s1ryja1V8dDotMK2WBGT2wnwchZ_x7Tag2L3OZfn5Po/preview&#34;&gt;WebKit WebSocketDesign Doc（グーグル）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://dev.chromium.org/developers/design-documents/extensions&#34;&gt;The Chromium Projects - Extensions&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.google.com/document/d/1fwg-NsMKYtYxeEWe82rISIHjNrtdqonfiHgp8-PQ7m8/edit#&#34;&gt;Dagger 2.0
+&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;design-docどうやって書くの&#34;&gt;Design Docどうやって書くの？&lt;/h2&gt;
+&lt;p&gt;参考は貼りましたが、とはいってもどう書くの？という疑問は消えないわけでこちらにつづっていきます。&lt;/p&gt;
+&lt;h3 id=&#34;1-要件を整理する&#34;&gt;1. 要件を整理する&lt;/h3&gt;
+&lt;p&gt;やっぱり要件を把握していないとかけないのでお客さんとミーティングするなり、自身で考えるなりで要件を一つ一つ洗い出していきます。&lt;/p&gt;
+&lt;h3 id=&#34;2-design-docにタイトルをつける&#34;&gt;2. Design Docにタイトルをつける&lt;/h3&gt;
+&lt;p&gt;先ほどのGoogleさんのドキュメントにもあったようにタイトルを付けます。シンプルなものがよいかと思います。じゃないとタイトルだけで見てもらえなかったりするので。&lt;/p&gt;
+&lt;p&gt;あと自分も書いた後忘れるんでね。これ何のファイルだっけ？ってなったらソースコードとドキュメントの間に溝が生まれ始めます。&lt;/p&gt;
+&lt;h3 id=&#34;3-ゴールや背景を書く&#34;&gt;3. ゴールや背景を書く&lt;/h3&gt;
+&lt;p&gt;タイトルを書いたら続いて結論。&lt;/p&gt;
+&lt;p&gt;そのほうがシンプルでわかりやすいです。&lt;/p&gt;
+&lt;p&gt;小説だったらまったく面白くない話になりそうですが、ここではわかりやすさを優先しましょう。&lt;/p&gt;
+&lt;p&gt;またなんでこのプロダクト作ってるんだっけ？とならないように作るまでの経緯だったり、背景を書いておきましょう。&lt;/p&gt;
+&lt;p&gt;また今後開発に参加してくれる人も読めるので、設計に関して深い理解が得られます。&lt;/p&gt;
+&lt;h3 id=&#34;4-大まかな設計プロダクト概要を書く&#34;&gt;4. 大まかな設計、プロダクト概要を書く&lt;/h3&gt;
+&lt;p&gt;ここにはコードを見ただけではわからないようなもの、例えばアーキテクチャ、システム構成図、クラス図などを記述したりします。&lt;/p&gt;
+&lt;p&gt;絵がいっぱい書いてあったほうが楽しいですね！！&lt;/p&gt;
+&lt;h3 id=&#34;5-セキュリティやプライバシーについての考察を書く&#34;&gt;5. セキュリティやプライバシーについての考察を書く&lt;/h3&gt;
+&lt;p&gt;問題とその対処法をセットで書いておくとわかりやすいです。いざというときに手順があるのは安心です。&lt;/p&gt;
+&lt;h3 id=&#34;6-各機能の設計を書く&#34;&gt;6. 各機能の設計を書く&lt;/h3&gt;
+&lt;p&gt;すこし細かいことですが、ソースコードと同じ内容にならないように気を付けながら機能の目的、アルゴリズム、データ構造、インタフェースを記述します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;いつ提案されたか&lt;/li&gt;
+&lt;li&gt;担当者&lt;/li&gt;
+&lt;li&gt;担当チーム&lt;/li&gt;
+&lt;li&gt;機能概要&lt;/li&gt;
+&lt;li&gt;ユースケース&lt;/li&gt;
+&lt;li&gt;FAQ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;みたいな流れで書いてました。&lt;/p&gt;
+&lt;p&gt;もちろんAPIならSwaggerの内容もここに記載するようなイメージですね。&lt;/p&gt;
+&lt;h2 id=&#34;design-docを書くなら&#34;&gt;Design Docを書くなら？&lt;/h2&gt;
+&lt;p&gt;やはりGoogleドキュメントかなと思います。&lt;/p&gt;
+&lt;p&gt;アウトラインが自動で生成されるし、目次も作れるし、バージョン管理もできます。&lt;/p&gt;
+&lt;p&gt;唯一のデメリットとして忘れ去られると更新されなくなるということでできればソースコードに近い場所に置いておきたいんですよね。&lt;/p&gt;
+&lt;p&gt;そうなるとマークダウンとかで書いてGitHubとかで管理したほうがいいんでしょうけど、目次書くのだるすぎる。&lt;/p&gt;
+&lt;p&gt;天下のGoogleではGoogleドキュメント使ってるのでいまのところそれを使うのがよさそうです。&lt;/p&gt;
+&lt;h2 id=&#34;今もなお未完成である&#34;&gt;「今もなお未完成である」&lt;/h2&gt;
+&lt;p&gt;Design Docを書くにあたって一番大切なことだと思います。&lt;/p&gt;
+&lt;p&gt;常にアップデートされ続けるものとして、参加するすべてのメンバーが認識し、理解すること。&lt;/p&gt;
+&lt;p&gt;そうすることで設計書が腐ることはないのかなと思います。&lt;/p&gt;
+&lt;p&gt;僕自身のDesign Docに関しての理解もまだまだですが、もっとわかりやすく伝えられるように努力します。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/exec/obidos/ASIN/4534054726/31415q2-22/&#34;&gt;Google流資料作成術&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.atmarkit.co.jp/ait/articles/1606/21/news016_2.html&#34;&gt;残業も減らせる!? 上級エンジニアになるためのDesign Doc超入門&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.livedoor.jp/heitatta/archives/54439839.html&#34;&gt;Google のソフトウェア・エンジニアリング&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://shimo5.me/post/2019-12-13/ - &amp;copy; 2019. All rights reserved.</description>
+        </item>
     
-    <item>
-      <title>［Rails］resourceとresourcesの違い</title>
-      <link>https://shimo5.me/post/difference_between_resource_and_resources/</link>
-      <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/post/difference_between_resource_and_resources/</guid>
-      <description>結論 resourcesは、複数のリソースに対するCRUD処理を行うためのルーティングを生成する。 resourceは、ただ１つのリソースに対するCRUD処理を行うためのルーティングを生成する。
-どんなルーティングになるのか？ railsにはルーティングされているURI一覧を出力する機能があります。
-$ rake routes それぞれどんなルーティングが出力されるのか見てみます。
-resourcesの場合 resources :users  Prefix Verb URI Pattern Controller#Action users GET /users(.:format) users#index POST /users(.:format) users#create new_user GET /users/new(.:format) users#new edit_user GET /users/:id/edit(.:format) users#edit user GET /users/:id(.:format) users#show PATCH /users/:id(.:format) users#update PUT /users/:id(.:format) users#update DELETE /users/:id(.:format) users#destroy リソースが複数ある前提なので:idの指定があります。 新規作成や一覧取得には:idは必要ないので指定されていません。
-resourceの場合 resource :users  Prefix Verb URI Pattern Controller#Action new_users GET /users/new(.:format) users#new edit_users GET /users/edit(.:format) users#edit users GET /users(.:format) users#show PATCH /users(.</description>
-    </item>
     
-    <item>
-      <title>エンジニアブログ始めました。</title>
-      <link>https://shimo5.me/post/hello_world/</link>
-      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/post/hello_world/</guid>
-      <description>はじめまして 普段はWebエンジニア（主にバックエンド）として働いています。いままではQiitaやTwitterなどで主にアウトプットしていたのですが、Qiitaのゴミ記事問題に耳を痛め、オリジナルブログに逃げてきました。
-これからプロフィールページも充実させていこうかなと思っています。直近で多くイベントがあったので一つ一つ投稿しながら、技術的なアウトプットも忘れずに書き記していこうかなと思います。
-よろしくお願いします！ 最近はGoを勉強しているのでその辺の話が多くなるような気がしています。 引き続きよろしくお願いします。</description>
-    </item>
     
-    <item>
-      <title>About</title>
-      <link>https://shimo5.me/about/</link>
-      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/about/</guid>
-      <description>経歴などはこちら LinkedIn</description>
-    </item>
+        <item>
+        <title>JavaScriptのオブジェクトを触ってわかったSQLの削除の仕組み</title>
+        <link>https://shimo5.me/post/2019-10-11/</link>
+        <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://shimo5.me/post/2019-10-11/</guid>
+        <description>エンジニアの中の人 https://shimo5.me/post/2019-10-11/ -&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+&lt;p&gt;SQL構文にある&lt;code&gt;DELETE&lt;/code&gt;直後はデータをゴーストレコードとして設定し、データベース上には存在しているものの無効なレコードになっている。&lt;/p&gt;
+&lt;h2 id=&#34;そもそもなんでこんなこと調べたの&#34;&gt;そもそもなんでこんなこと調べたの？&lt;/h2&gt;
+&lt;p&gt;初心者向けのJavaScriptの学習教材を作成していました。
+DBの代わりにJSオブジェクトを用いて、データのCRUD機能を実装していくというものです。
+オブジェクトは下記のように定義しました。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var users = [
+    {
+        id: 1,
+        name: &#39;yamada&#39;,
+        age: 21,
+        job: &#39;student&#39;
+    },
+    {
+        id: 2,
+        name: &#39;suzuki&#39;,
+        age: 24,
+        job: &#39;employee&#39;
+    }
+]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CRUDなので当然DELETEも作成したのですが、その時事件は起きました。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;VM501:1 Uncaught TypeError: Cannot read property &#39;id&#39; of undefined
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;え&amp;hellip;？&lt;/p&gt;
+&lt;p&gt;該当コードはこちらでした。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function deleteUser(id) {
+
+    // バリデーションは省略〜
+
+    // 対象ユーザーを検索
+    for (let i = 0; i &amp;lt; users.length; i++) {
+        if (users[i].id === id) {
+            // 削除
+            return delete users[i];
+        }
+    }
+
+    return &#39;対象のユーザーは見つかりませんでした。&#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;対象ユーザーが見つかるまでループして探し、見つかったら削除するものでした。
+最初の一回は実行したらうまくいったのですが、２回目からなぜかうまくいかなくなってしまいました。&lt;/p&gt;
+&lt;p&gt;そして決定的なことに気づいてしまいます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+        id: 1,
+        name: &#39;yamada&#39;,
+        age: 21,
+        job: &#39;student&#39;
+    },
+    empty,
+    {
+        id: 3,
+        name: &#39;sato&#39;,
+        age: 28,
+        job: &#39;self-employee&#39;
+    }
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;id:2の削除はうまく行き、emptyになっていました。
+JSでdeleteメソッドを実行するとemptyになるらしいです（知らなかったな〜）&lt;/p&gt;
+&lt;p&gt;なのでforループを回した時に&lt;code&gt;undefined.id&lt;/code&gt;になるのでさっきのようなエラーが出るということでした。&lt;/p&gt;
+&lt;p&gt;直し方は単純で&lt;code&gt;undefined&lt;/code&gt;をスキップするようにしました。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function deleteUser(id) {
+
+    // バリデーションは省略〜
+
+    // 対象ユーザーを検索
+    for (let i = 0; i &amp;lt; users.length; i++) {
+        if (users[i] != undefined &amp;amp;&amp;amp; users[i].id === id) {
+            // 削除
+            return delete users[i];
+        }
+    }
+
+    return &#39;対象のユーザーは見つかりませんでした。&#39;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;そしてここで疑問が生まれます。&lt;/p&gt;
+&lt;p&gt;「JSオブジェクトは追加の際に&lt;code&gt;obj.length&lt;/code&gt;すれば自動でIDを付与できるけど、SQLも同じやり方してんのかな〜？だとするとJSオブジェクトのemptyみたいにDBにも削除したレコードの骸はあるはず。。。」&lt;/p&gt;
+&lt;h2 id=&#34;やっぱりあったその名もghost_data_record&#34;&gt;やっぱりあった。その名も「GHOST_DATA_RECORD」&lt;/h2&gt;
+&lt;p&gt;DELETE直後にはレコードは消えず、ゴーズトレコードとして存在しています。&lt;/p&gt;
+&lt;p&gt;では、&lt;code&gt;obj.length&lt;/code&gt;で取得していた次のID付与はどうやって設定しているのか？&lt;/p&gt;
+&lt;h2 id=&#34;auto_incrementの仕組み&#34;&gt;AUTO_INCREMENTの仕組み&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;AUTO_INCREMENT&lt;/code&gt;に次にセットされる値がすでに設定されるようになっています。&lt;/p&gt;
+&lt;p&gt;ちなみに&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; ALTER TABLE users AUTO_INCREMENT = 10;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;とやると&lt;code&gt;10&lt;/code&gt;からセットされるようになります。&lt;/p&gt;
+&lt;p&gt;おそらく値はレコード作成される時に&lt;code&gt;+1&lt;/code&gt;ずつされてるのかなと思います。（違っていたらすいません。）&lt;/p&gt;
+&lt;h2 id=&#34;ゴーストレコードはこのあとどうなる&#34;&gt;ゴーストレコードはこのあとどうなる？&lt;/h2&gt;
+&lt;p&gt;バックグラウンドで定期的に稼働しているゴーストクリーンアップタスク（GhostCleanupTask）が実行されたタイミングでデータベース上から完全にデータが削除されます。&lt;/p&gt;
+&lt;p&gt;ちなみにDBCCコマンドを実行することで手動でゴーストクリーンアップタスクを実行することも可能だそうです。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ゴーストレコードが存在している場合は、実レコードとして存在した状態になりますので、スロットにもカウントされています。
+ゴーストレコードが削除されると実レコードが消えますので、スロットとしてカウントされなくなります。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;さいごに&#34;&gt;さいごに&lt;/h2&gt;
+&lt;p&gt;SELECTもゴーストレコードはスルーしてるんだろうなということであくまで予測ですが、JSオブジェクトと同じような挙動をSQL上でもしていることがわかりました。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.engineer-memo.com/2011/04/05/sql-server-%E3%81%AE-delete-%E3%81%AE%E5%9F%BA%E6%9C%AC%E5%8B%95%E4%BD%9C%E3%82%92%E8%A6%8B%E3%81%A6%E3%81%BF%E3%82%8B/&#34;&gt;SQL Server の DELETE の基本動作を見てみる&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.terakoya.work/mysql-auto_increment-setting-howto/&#34;&gt;MySQLのAUTO_INCREMENTの自動採番の仕組みを考察&lt;/a&gt;&lt;/p&gt;
+- https://shimo5.me/post/2019-10-11/ - &amp;copy; 2019. All rights reserved.</description>
+        </item>
     
-    <item>
-      <title>Contact</title>
-      <link>https://shimo5.me/contact/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/contact/</guid>
-      <description> &amp;lt;div class=&amp;quot;pure-u-1 pure-u-md-1-3&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;email&amp;quot;&amp;gt;E-Mail&amp;lt;/label&amp;gt; &amp;lt;input id=&amp;quot;email&amp;quot; class=&amp;quot;pure-u-23-24&amp;quot; type=&amp;quot;email&amp;quot; name=&amp;quot;email&amp;quot; required&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;fieldset class=&amp;quot;pure-group&amp;quot;&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; class=&amp;quot;pure-u-23-24&amp;quot; placeholder=&amp;quot;A title&amp;quot; name=&amp;quot;title&amp;quot;&amp;gt; &amp;lt;textarea class=&amp;quot;pure-u-23-24&amp;quot; placeholder=&amp;quot;Your message&amp;quot; name=&amp;quot;message&amp;quot; required&amp;gt;&amp;lt;/textarea&amp;gt; &amp;lt;/fieldset&amp;gt; &amp;lt;button type=&amp;quot;submit&amp;quot; class=&amp;quot;pure-button pure-button-primary&amp;quot;&amp;gt;Send&amp;lt;/button&amp;gt;  </description>
-    </item>
+    
+    
+        <item>
+        <title>Rails:resourceとresourcesの違い</title>
+        <link>https://shimo5.me/post/2019-09-02/</link>
+        <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://shimo5.me/post/2019-09-02/</guid>
+        <description>エンジニアの中の人 https://shimo5.me/post/2019-09-02/ -&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+&lt;p&gt;resourcesは、複数のリソースに対するCRUD処理を行うためのルーティングを生成する。
+resourceは、ただ１つのリソースに対するCRUD処理を行うためのルーティングを生成する。&lt;/p&gt;
+&lt;h2 id=&#34;どんなルーティングになるのか&#34;&gt;どんなルーティングになるのか？&lt;/h2&gt;
+&lt;p&gt;railsにはルーティングされているURI一覧を出力する機能があります。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ rake routes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;それぞれどんなルーティングが出力されるのか見てみます。&lt;/p&gt;
+&lt;h3 id=&#34;resourcesの場合&#34;&gt;resourcesの場合&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;resources :users
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;   Prefix Verb   URI Pattern                             Controller#Action
+    users GET    /users(.:format)                        users#index
+          POST   /users(.:format)                        users#create
+ new_user GET    /users/new(.:format)                    users#new
+edit_user GET    /users/:id/edit(.:format)               users#edit
+     user GET    /users/:id(.:format)                    users#show
+          PATCH  /users/:id(.:format)                    users#update
+          PUT    /users/:id(.:format)                    users#update
+          DELETE /users/:id(.:format)                    users#destroy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;リソースが複数ある前提なので&lt;code&gt;:id&lt;/code&gt;の指定があります。
+新規作成や一覧取得には&lt;code&gt;:id&lt;/code&gt;は必要ないので指定されていません。&lt;/p&gt;
+&lt;h3 id=&#34;resourceの場合&#34;&gt;resourceの場合&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;resource :users
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;    Prefix Verb   URI Pattern                             Controller#Action
+ new_users GET    /users/new(.:format)                    users#new
+edit_users GET    /users/edit(.:format)                   users#edit
+     users GET    /users(.:format)                        users#show
+           PATCH  /users(.:format)                        users#update
+           PUT    /users(.:format)                        users#update
+           DELETE /users(.:format)                        users#destroy
+           POST   /users(.:format)                        users#create
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;resourcesが複数だったのに対し、resourceは一つのリソースに対してなので&lt;code&gt;:id&lt;/code&gt;の指定がありません。
+そもそも一つだから&lt;code&gt;:id&lt;/code&gt;がなくても編集、削除などができるということですね。&lt;/p&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://qiita.com/ryuuuuuuuuuu/items/e5960c7fecad4ef1301b&#34;&gt;resourceとresourcesの違い&lt;/a&gt;
+&lt;a href=&#34;https://qiita.com/Atsushi_/items/bb22ce67d14ba1abafc5&#34;&gt;Railsのresourcesとresourceついて&lt;/a&gt;&lt;/p&gt;
+- https://shimo5.me/post/2019-09-02/ - &amp;copy; 2019. All rights reserved.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>エンジニアブログ始めました。</title>
+        <link>https://shimo5.me/post/2019-08-26/</link>
+        <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://shimo5.me/post/2019-08-26/</guid>
+        <description>エンジニアの中の人 https://shimo5.me/post/2019-08-26/ -&lt;h2 id=&#34;はじめまして&#34;&gt;はじめまして&lt;/h2&gt;
+&lt;p&gt;普段はWebエンジニア（主にバックエンド）として働いています。いままではQiitaやTwitterなどで主にアウトプットしていたのですが、Qiitaのゴミ記事問題に耳を痛め、オリジナルブログに逃げてきました。&lt;/p&gt;
+&lt;p&gt;これから&lt;a href=&#34;https://shimo5.me/about/&#34;&gt;プロフィールページ&lt;/a&gt;も充実させていこうかなと思っています。直近で多くイベントがあったので一つ一つ投稿しながら、技術的なアウトプットも忘れずに書き記していこうかなと思います。&lt;/p&gt;
+&lt;h2 id=&#34;よろしくお願いします&#34;&gt;よろしくお願いします！&lt;/h2&gt;
+&lt;p&gt;最近はGoを勉強しているのでその辺の話が多くなるような気がしています。
+引き続きよろしくお願いします。&lt;/p&gt;
+- https://shimo5.me/post/2019-08-26/ - &amp;copy; 2019. All rights reserved.</description>
+        </item>
+    
     
   </channel>
-</rss>
+</rss> 

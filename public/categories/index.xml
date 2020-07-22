@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on エンジニアの中の人</title>
-    <link>https://shimo5.me/tags/</link>
-    <description>Recent content in Tags on エンジニアの中の人</description>
+    <title>Categories on エンジニアの中の人</title>
+    <link>https://shimo5.me/categories/</link>
+    <description>Recent content in Categories on エンジニアの中の人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
     <lastBuildDate>Fri, 13 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://shimo5.me/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://shimo5.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>designdoc</title>
-      <link>https://shimo5.me/tags/designdoc/</link>
+      <link>https://shimo5.me/categories/designdoc/</link>
       <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://shimo5.me/tags/designdoc/</guid>
+      <guid>https://shimo5.me/categories/designdoc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ruby</title>
-      <link>https://shimo5.me/tags/ruby/</link>
+      <title>rails</title>
+      <link>https://shimo5.me/categories/rails/</link>
       <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://shimo5.me/tags/ruby/</guid>
+      <guid>https://shimo5.me/categories/rails/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>エンジニア</title>
-      <link>https://shimo5.me/tags/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2/</link>
+      <title>雑談</title>
+      <link>https://shimo5.me/categories/%E9%9B%91%E8%AB%87/</link>
       <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://shimo5.me/tags/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2/</guid>
+      <guid>https://shimo5.me/categories/%E9%9B%91%E8%AB%87/</guid>
       <description></description>
     </item>
     

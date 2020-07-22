@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>エンジニア on エンジニアの中の人</title>
+    <link>https://shimo5.me/tags/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2/</link>
+    <description>Recent content in エンジニア on エンジニアの中の人</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 26 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://shimo5.me/tags/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>エンジニアブログ始めました。</title>
+      <link>https://shimo5.me/post/2019-08-26/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://shimo5.me/post/2019-08-26/</guid>
+      <description>はじめまして 普段はWebエンジニア（主にバックエンド）として働いています。いままではQiitaやTwitterなどで主にアウトプットしていたのですが、Qiitaのゴミ記事問題に耳を痛め、オリジナルブログに逃げてきました。
+これからプロフィールページも充実させていこうかなと思っています。直近で多くイベントがあったので一つ一つ投稿しながら、技術的なアウトプットも忘れずに書き記していこうかなと思います。
+よろしくお願いします！ 最近はGoを勉強しているのでその辺の話が多くなるような気がしています。 引き続きよろしくお願いします。</description>
+    </item>
+    
+  </channel>
+</rss>

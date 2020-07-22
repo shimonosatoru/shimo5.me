@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on エンジニアの中の人</title>
-    <link>https://shimo5.me/post/</link>
-    <description>Recent content in Posts on エンジニアの中の人</description>
+    <title>designdoc on エンジニアの中の人</title>
+    <link>https://shimo5.me/categories/designdoc/</link>
+    <description>Recent content in designdoc on エンジニアの中の人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
     <lastBuildDate>Fri, 13 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://shimo5.me/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://shimo5.me/categories/designdoc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -50,44 +50,6 @@ Design Docどうやって書くの？ 参考は貼りましたが、とはいっ
 1. 要件を整理する やっぱり要件を把握していないとかけないのでお客さんとミーティングするなり、自身で考えるなりで要件を一つ一つ洗い出していきます。
 2. Design Docにタイトルをつける 先ほどのGoogleさんのドキュメントにもあったようにタイトルを付けます。シンプルなものがよいかと思います。じゃないとタイトルだけで見てもらえなかったりするので。
 あと自分も書いた後忘れるんでね。これ何のファイルだっけ？ってなったらソースコードとドキュメントの間に溝が生まれ始めます。</description>
-    </item>
-    
-    <item>
-      <title>JavaScriptのオブジェクトを触ってわかったSQLの削除の仕組み</title>
-      <link>https://shimo5.me/post/2019-10-11/</link>
-      <pubDate>Fri, 11 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/post/2019-10-11/</guid>
-      <description>結論 SQL構文にあるDELETE直後はデータをゴーストレコードとして設定し、データベース上には存在しているものの無効なレコードになっている。
-そもそもなんでこんなこと調べたの？ 初心者向けのJavaScriptの学習教材を作成していました。 DBの代わりにJSオブジェクトを用いて、データのCRUD機能を実装していくというものです。 オブジェクトは下記のように定義しました。
-var users = [ { id: 1, name: &#39;yamada&#39;, age: 21, job: &#39;student&#39; }, { id: 2, name: &#39;suzuki&#39;, age: 24, job: &#39;employee&#39; } ] CRUDなので当然DELETEも作成したのですが、その時事件は起きました。
-VM501:1 Uncaught TypeError: Cannot read property &#39;id&#39; of undefined え&amp;hellip;？
-該当コードはこちらでした。
-function deleteUser(id) { // バリデーションは省略〜 // 対象ユーザーを検索 for (let i = 0; i &amp;lt; users.length; i++) { if (users[i].id === id) { // 削除 return delete users[i]; } } return &#39;対象のユーザーは見つかりませんでした。&#39;; } 対象ユーザーが見つかるまでループして探し、見つかったら削除するものでした。 最初の一回は実行したらうまくいったのですが、２回目からなぜかうまくいかなくなってしまいました。</description>
-    </item>
-    
-    <item>
-      <title>Rails:resourceとresourcesの違い</title>
-      <link>https://shimo5.me/post/2019-09-02/</link>
-      <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/post/2019-09-02/</guid>
-      <description>結論 resourcesは、複数のリソースに対するCRUD処理を行うためのルーティングを生成する。 resourceは、ただ１つのリソースに対するCRUD処理を行うためのルーティングを生成する。
-どんなルーティングになるのか？ railsにはルーティングされているURI一覧を出力する機能があります。
-$ rake routes それぞれどんなルーティングが出力されるのか見てみます。
-resourcesの場合 resources :users  Prefix Verb URI Pattern Controller#Action users GET /users(.:format) users#index POST /users(.:format) users#create new_user GET /users/new(.:format) users#new edit_user GET /users/:id/edit(.:format) users#edit user GET /users/:id(.:format) users#show PATCH /users/:id(.:format) users#update PUT /users/:id(.:format) users#update DELETE /users/:id(.:format) users#destroy リソースが複数ある前提なので:idの指定があります。 新規作成や一覧取得には:idは必要ないので指定されていません。
-resourceの場合 resource :users  Prefix Verb URI Pattern Controller#Action new_users GET /users/new(.:format) users#new edit_users GET /users/edit(.:format) users#edit users GET /users(.:format) users#show PATCH /users(.</description>
-    </item>
-    
-    <item>
-      <title>エンジニアブログ始めました。</title>
-      <link>https://shimo5.me/post/2019-08-26/</link>
-      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://shimo5.me/post/2019-08-26/</guid>
-      <description>はじめまして 普段はWebエンジニア（主にバックエンド）として働いています。いままではQiitaやTwitterなどで主にアウトプットしていたのですが、Qiitaのゴミ記事問題に耳を痛め、オリジナルブログに逃げてきました。
-これからプロフィールページも充実させていこうかなと思っています。直近で多くイベントがあったので一つ一つ投稿しながら、技術的なアウトプットも忘れずに書き記していこうかなと思います。
-よろしくお願いします！ 最近はGoを勉強しているのでその辺の話が多くなるような気がしています。 引き続きよろしくお願いします。</description>
     </item>
     
   </channel>

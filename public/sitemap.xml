@@ -3,27 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://shimo5.me/post/what_is_design_doc/</loc>
+    <loc>https://shimo5.me/categories/</loc>
     <lastmod>2019-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shimo5.me/post/about_ghost_record/</loc>
-    <lastmod>2019-10-11T00:00:00+00:00</lastmod>
+    <loc>https://shimo5.me/tags/designdoc/</loc>
+    <lastmod>2019-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shimo5.me/post/difference_between_resource_and_resources/</loc>
-    <lastmod>2019-09-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://shimo5.me/post/hello_world/</loc>
-    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
+    <loc>https://shimo5.me/categories/designdoc/</loc>
+    <lastmod>2019-12-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://shimo5.me/post/</loc>
+    <lastmod>2019-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shimo5.me/tags/</loc>
+    <lastmod>2019-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shimo5.me/post/2019-12-13/</loc>
     <lastmod>2019-12-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,21 +38,38 @@
   </url>
   
   <url>
-    <loc>https://shimo5.me/about/</loc>
+    <loc>https://shimo5.me/post/2019-10-11/</loc>
+    <lastmod>2019-10-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shimo5.me/categories/rails/</loc>
+    <lastmod>2019-10-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shimo5.me/tags/ruby/</loc>
+    <lastmod>2019-10-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shimo5.me/post/2019-09-02/</loc>
+    <lastmod>2019-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://shimo5.me/tags/%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2/</loc>
     <lastmod>2019-08-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shimo5.me/contact/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <loc>https://shimo5.me/post/2019-08-26/</loc>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://shimo5.me/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://shimo5.me/topics/</loc>
+    <loc>https://shimo5.me/categories/%E9%9B%91%E8%AB%87/</loc>
+    <lastmod>2019-08-26T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>
