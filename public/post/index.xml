@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 13 Dec 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://shimo5.me/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Mon, 07 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://shimo5.me/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dockerハンドブック</title>
+      <link>https://shimo5.me/post/2020-09-07/</link>
+      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://shimo5.me/post/2020-09-07/</guid>
+      <description>Dockerの概念や仕組みまではなんとなく理解できるもののDockerfileを書こうとするとスムーズに書けなかったり、そもそものDockerの基礎、あるいはコンテナ技術というものの基礎が抜け落ちていてDocker環境に移行できていないところも多いのではと思い、この記事を翻訳しました。
+Source：The Docker Handbook by Farhan Hasin Chowdhury（@Twitter）
+本記事は、原著者の許諾のもとに翻訳・掲載しております。
+ コンテナ化の概念自体はかなり古いですが、2013年にDocker Engineが登場したことで、アプリケーションのコンテナ化がはるかに簡単になりました。
+Stack Overflow Developer Survey-2020によると、 Dockerは#1 最も望まれるプラットフォーム、#2 最も愛されるプラットフォーム、および#3 最も人気のあるプラットフォームとなりました。
+必要に応じて、最初に始めるときは少し不安があるかもしれません。したがって、この記事では、コンテナ化の基本レベルから中級レベルまでのすべてを学習します。記事全体を読み終えると、次のことができるようになります。
+ (ほぼ)すべてのアプリケーションのコンテナ化 Docker HubにカスタムDockerイメージをアップロードする Docker Composeを使用して複数のコンテナを操作する  前提条件  Linuxターミナルの知識 JavaScriptの知識（続くプロジェクトの一部はJavaScriptを使用）  プロジェクトコード サンプルプロジェクトのコードは、次のリポジトリにあります。
+https://github.com/fhsinchy/docker-handbook-projects
+コードの完成形はcontainerizedブランチにあります。
+目次  コンテナ化とDockerの概要  仮想マシンとコンテナ   Dockerのインストール DockerでのHello World  Dockerアーキテクチャ イメージとコンテナ レジストリ 全体像   コンテナの操作  コンテナを実行する コンテナの一覧表示 コンテナの再起動 ダングリングコンテナのクリーンアップ インタラクティブモードでのコンテナの実行 実行可能イメージを使用してコンテナを作成する デタッチモードでコンテナを実行する 実行中のコンテナ内でコマンドを実行する 実行中のコンテナ内でシェルを起動する 実行中のコンテナからログにアクセスする 実行中のコンテナを停止または強制終了する ポートのマッピング   コンテナ分離のデモ カスタムイメージの作成  イメージ作成の基本 実行可能イメージを作成する Expressアプリケーションのコンテナ化 ボリュームの操作 マルチステージビルド ビルドされたイメージをDocker Hubにアップロードする   Docker Composeを使用したマルチコンテナアプリケーションの操作  Docker Composeの基本 デタッチモードでサービスを実行する サービスの一覧表示 実行中のサービス内でコマンドを実行する 実行中のサービス内でシェルを開始する 実行中のサービスからログにアクセスする 実行中のサービスを停止する フルスタックアプリケーションの作成   まとめ  コンテナ化とDockerの概要 コンテナ化とは、ソフトウェアコードとそのすべての依存関係を単一のパッケージ内にカプセル化して、どこでも一貫して実行できるようにするプロセスです。</description>
+    </item>
     
     <item>
       <title>「Design Doc」って何なのか？</title>
